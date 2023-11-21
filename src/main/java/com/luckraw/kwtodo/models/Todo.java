@@ -1,6 +1,7 @@
 package com.luckraw.kwtodo.models;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,6 +18,7 @@ public class Todo {
     @Column(nullable = false)
     private LocalDateTime createdAt;
     @Column(nullable = false)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate deadline;
     @Column(nullable = true)
     private LocalDate finishedAt;
