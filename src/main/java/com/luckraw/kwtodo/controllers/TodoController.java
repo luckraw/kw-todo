@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.time.LocalDate;
 import java.util.Map;
 
 @Controller
@@ -72,6 +73,18 @@ public class TodoController {
     @PostMapping("/delete/{id}")
     public String delete(Todo todo) {
         todoRepository.delete(todo);
+        return "redirect:/";
+    }
+
+    @PostMapping("/finish/{id}")
+    public String finish(@PathVariable Long id) {
+        var optionalTodo = todoRepository.findById(id);
+        if (optionalTodo.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        var todo = optionalTodo.get();
+        todo.markHasFinished();
+        todoRepository.save(todo);
         return "redirect:/";
     }
 }

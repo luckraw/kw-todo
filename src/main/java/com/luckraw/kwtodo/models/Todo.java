@@ -39,6 +39,7 @@ public class Todo {
         this.createdAt = LocalDateTime.now();
     }
 
+
     public Long getId() {
         return id;
     }
@@ -99,4 +100,9 @@ public class Todo {
                 ", title='" + title + '\'' +
                 '}';
     }
+
+    public void markHasFinished() {
+        this.finishedAt = LocalDate.now();
+    }
+
 }
