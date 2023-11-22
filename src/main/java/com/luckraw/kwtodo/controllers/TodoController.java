@@ -3,6 +3,7 @@ package com.luckraw.kwtodo.controllers;
 import com.luckraw.kwtodo.models.Todo;
 import com.luckraw.kwtodo.repositories.TodoRepository;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -26,7 +27,7 @@ public class TodoController {
 
     @GetMapping("/")
     public ModelAndView list() {
-        return new ModelAndView("todo/list", Map.of("todos", todoRepository.findAll()));
+        return new ModelAndView("todo/list", Map.of("todos", todoRepository.findAll(Sort.by("deadline"))));
     }
 
     @GetMapping("/create")
