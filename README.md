@@ -24,7 +24,7 @@ Este é um projeto de uma To Do list simples desenvolvido em Java, onde você va
 ![image](https://github.com/luckraw/kw-todo/assets/125526447/e0ec2871-d67d-43a0-9bd6-85dbc6f7c90e)
 - ### Editar tarefa.
 ![image](https://github.com/luckraw/kw-todo/assets/125526447/970ecd9d-c60b-4e7b-83af-0a1bc32b0966)
-- ### Conclusão de tarefa.
+- ### Conclusão da tarefa.
   ![image](https://github.com/luckraw/kw-todo/assets/125526447/7f3238f7-fb0f-482d-baa3-4d301c50ba83)
 
 
